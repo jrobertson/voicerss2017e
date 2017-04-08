@@ -36,16 +36,14 @@ class VoiceRSSe
     # attempts to find the audio file from a local cache instead of 
     # making a relatively expensive request through the web API
     
-    if File.exists? filename then
-      
-      FileUtils.cp filename, audiofile_out
-      
-    else
+    if not File.exists? filename then
             
-      voice = VoiceRSS.speech(@config.merge({'src' => text}))
+      voice = VoiceRSS.speech(@config.merge!({'src' => text}))
       File.write filename, voice['response']      
 
     end    
+    
+      FileUtils.cp filename, audiofile_out    
 
   end
 

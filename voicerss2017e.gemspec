@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name = 'voicerss2017e'
-  s.version = '0.1.0'
+  s.version = '0.1.1'
   s.summary = 'An enhancement of the voicerss2017 gem by caching audio ' + 
       'files locally to reduce the number of requests to the web API.'
   s.authors = ['James Robertson']
